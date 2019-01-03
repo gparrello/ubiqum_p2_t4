@@ -44,3 +44,9 @@ plot(
   interactive = TRUE
 )
 
+# ruleExplorer(tr)
+# itemInfo(tr) <- data.frame(labels = pr$Product, level1 = pr$Type)
+trByProductType <- aggregate(
+  tr,
+  pr$Type
+)
