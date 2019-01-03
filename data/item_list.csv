@@ -1,126 +1,126 @@
-Type,Product
-Laptops,LG Touchscreen Laptop
-Laptops,Acer Aspire
-Laptops,HP  Laptop
-Laptops,ASUS Chromebook
-Laptops,Apple Macbook Pro
-Laptops,Apple MacBook Air
-Laptops,Dell Laptop
-Laptops,Eluktronics Pro Gaming Laptop
-Laptops,"Alienware AW17R4-7345SLV-PUS 17"" Laptop"
-Laptops,HP Notebook Touchscreen Laptop PC
-Desktop,Lenovo Desktop Computer
-Desktop,iMac
-Desktop,HP Desktop
-Desktop,ASUS Desktop
-Desktop,Dell Desktop
-Desktop,Intel Desktop
-Desktop,Acer Desktop
-Desktop,CYBERPOWER Gamer Desktop
-Desktop,Dell 2 Desktop
-Monitors,Acer Monitor
-Monitors,LG Monitor
-Monitors,ASUS Monitor
-Monitors,ASUS 2 Monitor
-Monitors,Dell Monitor
-Monitors,Samsung Monitor
-Monitors,Sceptre Monitor
-Monitors,ViewSonic Monitor
-Monitors,AOC Monitor
-Monitors,HP Monitor
-Computer Mice,3-Button Mouse
-Computer Mice,Logitech Wireless Mouse
-Computer Mice,Microsoft Basic Optical Mouse
-Computer Mice,Logitech 3-button Mouse
-Computer Mice,Redragon Gaming Mouse
-Computer Mice,HP Wireless Mouse
-Computer Mice,Generic Black 3-Button
-Computer Mice,Wireless Portable Mouse
-Computer Mice,Gaming Mouse Professional
-Computer Mice,Slim Wireless Mouse
-Keyboard,HP USB Keyboard
-Keyboard,Logitech Wireless Keyboard
-Keyboard,Rii LED Keyboard
-Keyboard,Logitech Keyboard
-Keyboard,Backlit LED Gaming Keyboard
-Keyboard,Dell Wired Keyboard
-Keyboard,Apple Wired Keyboard
-Keyboard,Apple Wireless Keyboard
-Keyboard,Apple Magic Keyboard
-Mouse and Keyboard Combo,Logitech MK550 Wireless Wave Keyboard and Mouse Combo
-Mouse and Keyboard Combo,Logitech Desktop MK120 Mouse and keyboard Combo
-Mouse and Keyboard Combo,Logitech MK270 Wireless Keyboard and Mouse Combo
-Mouse and Keyboard Combo,Dell KM117 Wireless Keyboard & Mouse
-Mouse and Keyboard Combo,EagleTec Wireless Combo Keyboard and Mouse
-Mouse and Keyboard Combo,Microsoft Wireless Comfort Keyboard and Mouse
-Mouse and Keyboard Combo,Microsoft Wireless Desktop Keyboard and Mouse
-Mouse and Keyboard Combo,Rii LED Gaming Keyboard & Mouse Combo
-Mouse and Keyboard Combo,Logitech MK360 Wireless Keyboard and Mouse Combo
-Computer Headphones,Zombie Gaming Headset
-Computer Headphones,Logitech ClearChat Headset
-Computer Headphones,Panasonic On-Ear Stereo Headphones RP-HT21
-Computer Headphones,PC Gaming Headset
-Computer Headphones,Kensington Headphones
-Computer Headphones,Logitech Stereo Headset
-Computer Headphones,Koss Home Headphones
-Computer Headphones,Microsoft Headset
-Computer Headphones,Ailihen Stereo Headphones
-Computer Headphones,XIBERIA Gaming Headset
-Active Headphones,Apple Earpods
-Active Headphones,Monster Beats By Dr Dre
-Active Headphones,Otium Wireless Sports Bluetooth Headphones
-Active Headphones,Panasonic In-Ear Headphone
-Active Headphones,APIE Bluetooth Headphones
-Active Headphones,Philips Flexible Earhook Headphones
-Computer Cords,HDMI Cable 6ft
-Computer Cords,Ethernet Cable
-Computer Cords,Etekcity Power Extension Cord Cable
-Computer Cords,Audio Cable
-Computer Cords,VGA Monitor Cable
-Computer Cords,iPhone Charger Cable
-Computer Cords,HDMI Adapter
-Computer Cords,USB Cable
-Computer Cords,Samsung Charging Cable
-Accessories,Microsoft Office Home and Student 2016
-Accessories,Computer Game
-Accessories,Belkin Mouse Pad
-Accessories,Large Mouse Pad
-Speakers,Cambridge Bluetooth Speaker
-Speakers,JBL Splashproof Portable Bluetooth Speaker
-Speakers,DOSS Touch Wireless Bluetooth
-Speakers,Logitech Multimedia Speakers
-Speakers,Rokono Mini Speaker
-Speakers,Cyber Acoustics
-Speakers,Bose Companion Speakers
-Speakers,Mackie CR Speakers
-Speakers,Sonos
-Printers,Epson Printer
-Printers,HP Wireless Printer
-Printers,Canon Office Printer
-Printers,Brother Printer
-Printers,DYMO Label Manker
-Printer Ink,Epson Black  Ink
-Printer Ink,HP Black & Tri-color Ink
-Printer Ink,Canon Ink
-Printer Ink,Brother Printer Toner
-Printer Ink,DYMO Labeling Tape
-Computer Stands,Halter Acrylic Monitor Stand
-Computer Stands,Height-Adjustable Standing Desk
-Computer Stands,Multi Media Stand
-Computer Stands,Halter Mesh Metal Monitor Stand
-Computer Stands,Full Motion Monitor Mount
-Computer Tablets,iPad
-Computer Tablets,iPad Pro
-Computer Tablets,Fire HD Tablet
-Computer Tablets,Samsung Galaxy Tab
-Computer Tablets,Kindle
-External Hardrives,1TB Portable External Hard Drive
-External Hardrives,2TB Portable External Hard Drive
-External Hardrives,5TB Desktop Hard Drive
-External Hardrives,Slim 2TB Portable External Hard Drive
-External Hardrives,3TB Portable External Hard Drive
-Smart Home Devices,Apple TV
-Smart Home Devices,Google Home
-Smart Home Devices,Smart Light Bulb
-Smart Home Devices,Fire TV Stick
-Smart Home Devices,Roku Express
+Type,Product,NewType
+Laptops,LG Touchscreen Laptop,Laptops
+Laptops,Acer Aspire,Laptops
+Laptops,HP  Laptop,Laptops
+Laptops,ASUS Chromebook,Laptops
+Laptops,Apple Macbook Pro,Fanboy Laptops
+Laptops,Apple MacBook Air,Fanboy Laptops
+Laptops,Dell Laptop,Laptops
+Laptops,Eluktronics Pro Gaming Laptop,Gaming Laptops
+Laptops,"Alienware AW17R4-7345SLV-PUS 17"" Laptop",Laptops
+Laptops,HP Notebook Touchscreen Laptop PC,Laptops
+Desktop,Lenovo Desktop Computer,Desktop
+Desktop,iMac,Fanboy Desktop
+Desktop,HP Desktop,Desktop
+Desktop,ASUS Desktop,Desktop
+Desktop,Dell Desktop,Desktop
+Desktop,Intel Desktop,Desktop
+Desktop,Acer Desktop,Desktop
+Desktop,CYBERPOWER Gamer Desktop,Desktop
+Desktop,Dell 2 Desktop,Desktop
+Monitors,Acer Monitor,Monitors
+Monitors,LG Monitor,Monitors
+Monitors,ASUS Monitor,Monitors
+Monitors,ASUS 2 Monitor,Monitors
+Monitors,Dell Monitor,Monitors
+Monitors,Samsung Monitor,Monitors
+Monitors,Sceptre Monitor,Monitors
+Monitors,ViewSonic Monitor,Monitors
+Monitors,AOC Monitor,Monitors
+Monitors,HP Monitor,Monitors
+Computer Mice,3-Button Mouse,Computer Mice
+Computer Mice,Logitech Wireless Mouse,Computer Mice
+Computer Mice,Microsoft Basic Optical Mouse,Computer Mice
+Computer Mice,Logitech 3-button Mouse,Computer Mice
+Computer Mice,Redragon Gaming Mouse,Gaming Computer Mice
+Computer Mice,HP Wireless Mouse,Computer Mice
+Computer Mice,Generic Black 3-Button,Computer Mice
+Computer Mice,Wireless Portable Mouse,Computer Mice
+Computer Mice,Gaming Mouse Professional,Gaming Computer Mice
+Computer Mice,Slim Wireless Mouse,Computer Mice
+Keyboard,HP USB Keyboard,Keyboard
+Keyboard,Logitech Wireless Keyboard,Keyboard
+Keyboard,Rii LED Keyboard,Keyboard
+Keyboard,Logitech Keyboard,Keyboard
+Keyboard,Backlit LED Gaming Keyboard,Gaming Keyboard
+Keyboard,Dell Wired Keyboard,Keyboard
+Keyboard,Apple Wired Keyboard,Fanboy Keyboard
+Keyboard,Apple Wireless Keyboard,Fanboy Keyboard
+Keyboard,Apple Magic Keyboard,Fanboy Keyboard
+Mouse and Keyboard Combo,Logitech MK550 Wireless Wave Keyboard and Mouse Combo,Mouse and Keyboard Combo
+Mouse and Keyboard Combo,Logitech Desktop MK120 Mouse and keyboard Combo,Mouse and Keyboard Combo
+Mouse and Keyboard Combo,Logitech MK270 Wireless Keyboard and Mouse Combo,Mouse and Keyboard Combo
+Mouse and Keyboard Combo,Dell KM117 Wireless Keyboard & Mouse,Mouse and Keyboard Combo
+Mouse and Keyboard Combo,EagleTec Wireless Combo Keyboard and Mouse,Mouse and Keyboard Combo
+Mouse and Keyboard Combo,Microsoft Wireless Comfort Keyboard and Mouse,Mouse and Keyboard Combo
+Mouse and Keyboard Combo,Microsoft Wireless Desktop Keyboard and Mouse,Mouse and Keyboard Combo
+Mouse and Keyboard Combo,Rii LED Gaming Keyboard & Mouse Combo,Gaming Mouse and Keyboard Combo
+Mouse and Keyboard Combo,Logitech MK360 Wireless Keyboard and Mouse Combo,Mouse and Keyboard Combo
+Computer Headphones,Zombie Gaming Headset,Gaming Computer Headphones
+Computer Headphones,Logitech ClearChat Headset,Computer Headphones
+Computer Headphones,Panasonic On-Ear Stereo Headphones RP-HT21,Computer Headphones
+Computer Headphones,PC Gaming Headset,Gaming Computer Headphones
+Computer Headphones,Kensington Headphones,Computer Headphones
+Computer Headphones,Logitech Stereo Headset,Computer Headphones
+Computer Headphones,Koss Home Headphones,Computer Headphones
+Computer Headphones,Microsoft Headset,Computer Headphones
+Computer Headphones,Ailihen Stereo Headphones,Computer Headphones
+Computer Headphones,XIBERIA Gaming Headset,Gaming Computer Headphones
+Active Headphones,Apple Earpods,Fanboy Active Headphones
+Active Headphones,Monster Beats By Dr Dre,Active Headphones
+Active Headphones,Otium Wireless Sports Bluetooth Headphones,Active Headphones
+Active Headphones,Panasonic In-Ear Headphone,Active Headphones
+Active Headphones,APIE Bluetooth Headphones,Active Headphones
+Active Headphones,Philips Flexible Earhook Headphones,Active Headphones
+Computer Cords,HDMI Cable 6ft,Computer Cords
+Computer Cords,Ethernet Cable,Computer Cords
+Computer Cords,Etekcity Power Extension Cord Cable,Computer Cords
+Computer Cords,Audio Cable,Computer Cords
+Computer Cords,VGA Monitor Cable,Computer Cords
+Computer Cords,iPhone Charger Cable,Fanboy Computer Cords
+Computer Cords,HDMI Adapter,Computer Cords
+Computer Cords,USB Cable,Computer Cords
+Computer Cords,Samsung Charging Cable,Computer Cords
+Accessories,Microsoft Office Home and Student 2016,Accessories
+Accessories,Computer Game,Accessories
+Accessories,Belkin Mouse Pad,Accessories
+Accessories,Large Mouse Pad,Accessories
+Speakers,Cambridge Bluetooth Speaker,Speakers
+Speakers,JBL Splashproof Portable Bluetooth Speaker,Speakers
+Speakers,DOSS Touch Wireless Bluetooth,Speakers
+Speakers,Logitech Multimedia Speakers,Speakers
+Speakers,Rokono Mini Speaker,Speakers
+Speakers,Cyber Acoustics,Speakers
+Speakers,Bose Companion Speakers,Speakers
+Speakers,Mackie CR Speakers,Speakers
+Speakers,Sonos,Speakers
+Printers,Epson Printer,Printers
+Printers,HP Wireless Printer,Printers
+Printers,Canon Office Printer,Printers
+Printers,Brother Printer,Printers
+Printers,DYMO Label Manker,Printers
+Printer Ink,Epson Black  Ink,Printer Ink
+Printer Ink,HP Black & Tri-color Ink,Printer Ink
+Printer Ink,Canon Ink,Printer Ink
+Printer Ink,Brother Printer Toner,Printer Ink
+Printer Ink,DYMO Labeling Tape,Printer Ink
+Computer Stands,Halter Acrylic Monitor Stand,Computer Stands
+Computer Stands,Height-Adjustable Standing Desk,Computer Stands
+Computer Stands,Multi Media Stand,Computer Stands
+Computer Stands,Halter Mesh Metal Monitor Stand,Computer Stands
+Computer Stands,Full Motion Monitor Mount,Computer Stands
+Computer Tablets,iPad,Computer Tablets
+Computer Tablets,iPad Pro,Computer Tablets
+Computer Tablets,Fire HD Tablet,Computer Tablets
+Computer Tablets,Samsung Galaxy Tab,Computer Tablets
+Computer Tablets,Kindle,Computer Tablets
+External Hardrives,1TB Portable External Hard Drive,External Hardrives
+External Hardrives,2TB Portable External Hard Drive,External Hardrives
+External Hardrives,5TB Desktop Hard Drive,External Hardrives
+External Hardrives,Slim 2TB Portable External Hard Drive,External Hardrives
+External Hardrives,3TB Portable External Hard Drive,External Hardrives
+Smart Home Devices,Apple TV,Fanboy Smart Home Devices
+Smart Home Devices,Google Home,Smart Home Devices
+Smart Home Devices,Smart Light Bulb,Smart Home Devices
+Smart Home Devices,Fire TV Stick,Smart Home Devices
+Smart Home Devices,Roku Express,Smart Home Devices
