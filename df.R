@@ -1,7 +1,5 @@
 # load libraries
 pacman::p_load(
-  "caret",
-  "rbokeh",
   "arules",
   "arulesViz",
   "gdata",
