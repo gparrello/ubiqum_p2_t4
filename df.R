@@ -1,16 +1,7 @@
 # load libraries
 pacman::p_load(
-  "arules",
-  "arulesViz",
   "gdata",
   "reshape2"
-)
-
-# read transactions from file
-tr <- read.transactions(
-  "./data/ElectronidexTransactions2017.csv",
-  format = "basket",
-  sep = ","
 )
 
 # read transactions as dataframe
@@ -20,6 +11,7 @@ df <- read.csv(
   header = FALSE
 )
 df <- df[!apply(df == "", 1, all),]  # clean empty rows
+allIndex <- c(1:nrow(df))  # create vector with all indexes
 
 # read categories from file
 pr <- read.csv(
@@ -35,7 +27,7 @@ for(row in 1:nrow(df)){
   v <- v[!v %in% ""]  # remove empty elements from the vector
   v <- as.data.frame(v)  # convert to a 1-column dataframe
   colnames(v) <- "Product"  # change name of column
-  v["transaction"] <- row  # add column with transaction number
+  v$transaction <- row  # add column with transaction number
   tmpdf <- rbind(tmpdf, v)  # append to new dataframe to create long format
 }
 
@@ -51,17 +43,24 @@ df <- merge(
   )
 df <- subset(df, Product != "")  # still have some empty products, remove them
 df <- dcast(df, transaction ~ Type)  # cast dataframe into wide (pivot) format
+rownames(df) <- df$transaction
+df$transaction <- NULL
+df$total <- apply(df, 1, sum)  # get a summatory of all categories
 rm(v, row, tmpdf, pr)  # remove unused variables
-df$total <- apply(df[,-1], 1, sum)  # get a summatory of all categories
 
-# subset for b2b
+# create some variables to use as cutting criteria
 cutTotal <- 10
 cutDesktop <- 2
 cutLaptop <- cutDesktop
+# subset for b2b
 b2b <- subset(
   df,
+  # criteria used to subset for b2b
   total > cutTotal |
     Desktop >= cutDesktop |
     Laptops >= cutLaptop
-)[,"transaction"]
-b2b <- as.vector(b2b)
+)
+b2b <- as.integer(rownames(b2b))
+b2c <- allIndex[!allIndex %in% b2b]  # create vector for b2c out of all indexes
+rm(cutTotal, cutDesktop, cutLaptop)  # remove unused variables
+# rm(allIndex, df)  # remove unused variables2df
