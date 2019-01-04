@@ -52,3 +52,16 @@ df <- merge(
 df <- subset(df, Product != "")  # still have some empty products, remove them
 df <- dcast(df, transaction ~ Type)  # cast dataframe into wide (pivot) format
 rm(v, row, tmpdf, pr)  # remove unused variables
+df$total <- apply(df[,-1], 1, sum)  # get a summatory of all categories
+
+# subset for b2b
+cutTotal <- 10
+cutDesktop <- 2
+cutLaptop <- cutDesktop
+b2b <- subset(
+  df,
+  total > cutTotal |
+    Desktop >= cutDesktop |
+    Laptops >= cutLaptop
+)[,"transaction"]
+b2b <- as.vector(b2b)
