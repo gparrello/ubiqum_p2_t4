@@ -2,28 +2,27 @@ pacman::p_load(
   "caret",
   "rbokeh",
   "arules",
-  "arulesViz",
-  "reshape2"
+  "arulesViz"
 )
 
+# read transactions from file
 tr <- read.transactions(
   "./data/ElectronidexTransactions2017.csv",
-  # format = "basket",
+  #format = "basket",
   sep = ','
 )
-tr <- tr[which(size(tr) != 0)]
-newInfo <- data.frame(itemInfo(tr)$labels)
-colnames(newInfo) <- "labels"
+tr <- tr[which(size(tr) != 0)]  # eliminate empty rows
+newInfo <- data.frame(itemInfo(tr)$labels)  # extract labels (columns) from the transactions into a new variable newInfo
+colnames(newInfo) <- "labels"  # change column name of newInfo
 
+# read categories from file
 pr <- read.csv(
   "./data/item_list2.csv"
 )
-newInfo <- merge(newInfo, pr, by.x = "labels", by.y = "Product", all.x=TRUE)
-itemInfo(tr) <- subset(
-  newInfo,
-  select = c("labels", "Type", "NewType")
-)
+newInfo <- merge(newInfo, pr, by.x = "labels", by.y = "Product", all.x=TRUE)  # merge categories into newInfo
+itemInfo(tr) <- newInfo  # add categories to itemInfo in tr
 
+# build frequency plot
 freqPlot <- itemFrequencyPlot(
   tr,
   topN = 10,
@@ -56,18 +55,19 @@ freqPlot <- itemFrequencyPlot(
 # ruleExplorer(tr)
 # itemInfo(tr) <- data.frame(labels = pr$Product, level1 = pr$Type)
 
+# aggregate tr by categories
 trByProductType <- aggregate(
   tr,
-  by = tr@itemInfo[["Type"]],
-  FUN=sum
+  by = tr@itemInfo[["Type"]]
 )
 
+# aggregate tr by other categories
 trByProductType2 <- aggregate(
   tr,
   by = tr@itemInfo[["NewType"]]
 )
 
 # trB2C <- subset(tr, (!items %in% lhs(b2bRules) & !items %in% lhs(b2bRules)))
-profileLimit <- 4
-trB2C <- subset(tr, size(tr) < profileLimit)
-trB2B <- subset(tr, size(tr) >= profileLimit)
+# profileLimit <- 4
+# trB2C <- subset(tr, size(tr) < profileLimit)
+# trB2B <- subset(tr, size(tr) >= profileLimit)
