@@ -1,6 +1,4 @@
 pacman::p_load(
-  "caret",
-  "rbokeh",
   "arules",
   "arulesViz"
 )
@@ -20,7 +18,8 @@ pr <- read.csv(
   "./data/item_list2.csv"
 )
 newInfo <- merge(newInfo, pr, by.x = "labels", by.y = "Product", all.x=TRUE)  # merge categories into newInfo
-itemInfo(tr) <- newInfo  # add categories to itemInfo in tr
+itemInfo(tr) <- newInfo[,c("labels", "Type")]  # add categories to itemInfo in tr
+rm(newInfo)  # remove unused variables
 
 # build frequency plot
 freqPlot <- itemFrequencyPlot(
@@ -29,18 +28,6 @@ freqPlot <- itemFrequencyPlot(
   # support = .2,
   type = "absolute"
 )
-
-# b2bRules <- apriori(
-#   tr,
-#   parameter = list(
-#     support = .023,
-#     confidence = .3,
-#     minlen = 3
-#   )
-# )
-
-# figure() %>%
-  # ly_points(support, lift, data = rules@quality, color = confidence)
 
 # plot(
 #   head(
@@ -52,9 +39,6 @@ freqPlot <- itemFrequencyPlot(
 #   interactive = TRUE
 # )
 
-# ruleExplorer(tr)
-# itemInfo(tr) <- data.frame(labels = pr$Product, level1 = pr$Type)
-
 # aggregate tr by categories
 trByProductType <- aggregate(
   tr,
@@ -62,10 +46,10 @@ trByProductType <- aggregate(
 )
 
 # aggregate tr by other categories
-trByProductType2 <- aggregate(
-  tr,
-  by = tr@itemInfo[["NewType"]]
-)
+# trByProductType2 <- aggregate(
+#   tr,
+#   by = tr@itemInfo[["NewType"]]
+# )
 
 # trB2C <- subset(tr, (!items %in% lhs(b2bRules) & !items %in% lhs(b2bRules)))
 # profileLimit <- 4
