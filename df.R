@@ -1,3 +1,4 @@
+#### Load libraries and data ####
 # load libraries
 pacman::p_load(
   "gdata",
@@ -19,8 +20,8 @@ pr <- read.csv(
 )
 pr <- apply(pr, 2, trim)  # trim strings
 
+#### Build transactions dataframe ####
 tmpdf <- data.frame()  # create empty dataframe
-
 # loop over dataframe rows
 for(row in 1:nrow(df)){
   v <- unname(unlist(df[row,]))  # get a vector out of a row from the dataframe
@@ -48,6 +49,7 @@ df$transaction <- NULL  # remove transaction columns
 df$total <- apply(df, 1, sum)  # get a summatory of all categories
 rm(v, row, tmpdf, pr)  # remove unused variables
 
+#### Subset into client profile ####
 # create some variables to use as cutting criteria
 cutTotal <- 10
 cutDesktop <- 2
@@ -60,7 +62,9 @@ b2b <- subset(
     Desktop >= cutDesktop |
     Laptops >= cutLaptop
 )
+rm(cutTotal, cutDesktop, cutLaptop)  # remove unused variables
+
+# create index vectors
 b2b <- as.integer(rownames(b2b))  # create integer vector from b2b indexes
 b2c <- allIndex[!allIndex %in% b2b]  # create vector for b2c out of all indexes
-rm(cutTotal, cutDesktop, cutLaptop)  # remove unused variables
 rm(allIndex, df)  # remove unused variables2df
