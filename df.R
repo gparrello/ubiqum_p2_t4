@@ -43,8 +43,8 @@ df <- merge(
   )
 df <- subset(df, Product != "")  # still have some empty products, remove them
 df <- dcast(df, transaction ~ Type)  # cast dataframe into wide (pivot) format
-rownames(df) <- df$transaction
-df$transaction <- NULL
+rownames(df) <- df$transaction  # set transaction numbers as indexes
+df$transaction <- NULL  # remove transaction columns
 df$total <- apply(df, 1, sum)  # get a summatory of all categories
 rm(v, row, tmpdf, pr)  # remove unused variables
 
@@ -60,7 +60,7 @@ b2b <- subset(
     Desktop >= cutDesktop |
     Laptops >= cutLaptop
 )
-b2b <- as.integer(rownames(b2b))
+b2b <- as.integer(rownames(b2b))  # create integer vector from b2b indexes
 b2c <- allIndex[!allIndex %in% b2b]  # create vector for b2c out of all indexes
 rm(cutTotal, cutDesktop, cutLaptop)  # remove unused variables
-# rm(allIndex, df)  # remove unused variables2df
+rm(allIndex, df)  # remove unused variables2df
