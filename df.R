@@ -50,19 +50,34 @@ df$total <- apply(df, 1, sum)  # get a summatory of all categories
 rm(v, row, tmpdf, pr)  # remove unused variables
 
 #### Subset into client profile ####
-# create some variables to use as cutting criteria
-cutTotal <- 10
-cutDesktop <- 2
-cutLaptop <- cutDesktop
+# create some variables to use as minimum values to qualify as b2b profile
+minTotalItems <- 10
+minDesktop <- 2
+minLaptop <- minDesktop
+minTablets <- minDesktop
+minMonitors <- 3
+minStands <- minMonitors
+minHeadphones <- 2
+minMouseKeyboard <- 2
+minPrinters <- 2
 # subset for b2b
 b2b <- subset(
   df,
   # criteria used to subset for b2b
-  total > cutTotal |
-    Desktop >= cutDesktop |
-    Laptops >= cutLaptop
+  total >= minTotalItems |
+    Desktop >= minDesktop |
+    Laptops >= minLaptop |
+    `Computer Tablets` >= minTablets |
+    Monitors >= minMonitors |
+    `Computer Stands` >= minStands |
+    `Computer Headphones` >= minHeadphones |
+    `Active Headphones` >= minHeadphones |
+    Keyboard >= minMouseKeyboard |
+    `Computer Mice` >= minMouseKeyboard |
+    `Mouse and Keyboard Combo` >= minMouseKeyboard |
+    Printers >= minPrinters
 )
-rm(cutTotal, cutDesktop, cutLaptop)  # remove unused variables
+rm(list=ls(pattern="^min.*"))  # remove unused variables
 
 # create index vectors
 b2b <- as.integer(rownames(b2b))  # create integer vector from b2b indexes
