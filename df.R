@@ -20,6 +20,7 @@ pr <- read.csv(
 )
 pr <- apply(pr, 2, trim)  # trim strings
 
+
 #### Build transactions dataframe ####
 tmpdf <- data.frame()  # create empty dataframe
 # loop over dataframe rows
@@ -36,18 +37,27 @@ df <- apply(tmpdf, 2, trim)  # trim strings
 # merge categories
 df <- merge(
   df,
-  pr[,c("Product", "Type")],
+  pr,#[,c("Product", "Type")],
   by.x = "Product",
   by.y = "Product",
   all.x = TRUE,
   all.y = FALSE
   )
 df <- subset(df, Product != "")  # still have some empty products, remove them
-df <- dcast(df, transaction ~ Type)  # cast dataframe into wide (pivot) format
-rownames(df) <- df$transaction  # set transaction numbers as indexes
-df$transaction <- NULL  # remove transaction columns
-df$total <- apply(df, 1, sum)  # get a summatory of all categories
 rm(v, row, tmpdf, pr)  # remove unused variables
+
+dfWideProducts <- dcast(df, transaction ~ Type, value.var = "transaction", fun.aggregate = length)  # cast dataframe into wide (pivot) format
+rownames(dfWideProducts) <- dfWideProducts$transaction  # set transaction numbers as indexes
+dfWideProducts$transaction <- NULL  # remove transaction columns
+dfWideProducts$total <- apply(dfWideProducts, 1, sum)  # get a summatory of all categories
+
+dfWideClients <- dcast(df, transaction ~ ClientType, value.var = "transaction", fun.aggregate = length) # cast dataframe into wide (pivot) format
+rownames(dfWideClients) <- dfWideClients$transaction  # set transaction numbers as indexes
+dfWideClients$transaction <- NULL  # remove transaction columns
+dfWideClients$total <- apply(dfWideClients, 1, sum)  # get a summatory of all categories
+
+rm(df)  # remove unused variables2df
+
 
 #### Subset into client profiles ####
 # create some variables to use as minimum values to qualify as b2b profile
@@ -63,7 +73,7 @@ minPrinters <- 2
 minSmartHome <- 2
 # subset for b2b
 b2b <- subset(
-  df,
+  dfWideProducts,
   # criteria used to subset for b2b
   total >= minTotalItems |
     Desktop >= minDesktop |
@@ -79,9 +89,28 @@ b2b <- subset(
     Printers >= minPrinters |
     `Smart Home Devices` >= minSmartHome
 )
-rm(list=ls(pattern="^min.*"))  # remove unused variables
-
 # create index vectors
 b2b <- as.integer(rownames(b2b))  # create integer vector from b2b indexes
 b2c <- allIndex[!allIndex %in% b2b]  # create vector for b2c out of all indexes
-rm(allIndex, df)  # remove unused variables2df
+rm(allIndex)  # remove unused variables
+
+# create some variables to use as minimum values to qualify as b2b profile
+minGaming <- 2
+minFanboy <- 2
+# subset for b2b
+gaming <- subset(
+  dfWideClients,
+  # criteria used to subset for b2b
+  Gaming >= minGaming
+)
+fanboy <- subset(
+  dfWideClients,
+  # criteria used to subset for b2b
+  Fanboy >= minFanboy
+)
+# create index vectors
+gaming <- as.integer(rownames(gaming))
+fanboy <- as.integer(rownames(fanboy))
+
+rm(list=ls(pattern="^min.*"))  # remove unused variables
+# rm(dfWideProducts, dfWideClients)  # remove unused variables2df
