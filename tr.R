@@ -19,7 +19,7 @@ pr <- read.csv(
 )
 newInfo <- merge(newInfo, pr, by.x = "labels", by.y = "Product", all.x=TRUE)  # merge categories into newInfo
 itemInfo(tr) <- newInfo[,c("labels", "Type")]  # add categories to itemInfo in tr
-rm(newInfo)  # remove unused variables
+rm(newInfo, pr)  # remove unused variables
 
 # build frequency plot
 freqPlot <- itemFrequencyPlot(
