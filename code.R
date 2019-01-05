@@ -1,10 +1,16 @@
-source("./df.R")
-source("./tr.R")
-
+# load libraries
 pacman::p_load(
   "rbokeh"
 )
 
+# load other code
+file.sources <- c(
+  "./df.R",
+  "./tr.R"
+)
+sapply(file.sources, source, .GlobalEnv)
+
+# subset transactions
 b2b <- tr[b2b]
 b2c <- tr[b2c]
 
