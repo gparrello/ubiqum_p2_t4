@@ -49,17 +49,18 @@ df$transaction <- NULL  # remove transaction columns
 df$total <- apply(df, 1, sum)  # get a summatory of all categories
 rm(v, row, tmpdf, pr)  # remove unused variables
 
-#### Subset into client profile ####
+#### Subset into client profiles ####
 # create some variables to use as minimum values to qualify as b2b profile
 minTotalItems <- 10
 minDesktop <- 2
-minLaptop <- minDesktop
-minTablets <- minDesktop
+minLaptop <- 2
+minTablets <- 2
 minMonitors <- 3
-minStands <- minMonitors
+minStands <- 3
 minHeadphones <- 2
 minMouseKeyboard <- 2
 minPrinters <- 2
+minSmartHome <- 2
 # subset for b2b
 b2b <- subset(
   df,
@@ -75,7 +76,8 @@ b2b <- subset(
     Keyboard >= minMouseKeyboard |
     `Computer Mice` >= minMouseKeyboard |
     `Mouse and Keyboard Combo` >= minMouseKeyboard |
-    Printers >= minPrinters
+    Printers >= minPrinters |
+    `Smart Home Devices` >= minSmartHome
 )
 rm(list=ls(pattern="^min.*"))  # remove unused variables
 
