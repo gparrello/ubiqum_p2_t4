@@ -14,17 +14,46 @@ knitr::opts_chunk$set(
   echo = FALSE,
   cache = FALSE
   )
-# source("./code.R")
+source("./code.R")
 ```
 
 ## Executive Summary
 ### What is this report about?
-Our purpose is to **determine whether the acquisition of ElectroIndex is convenient for Blackwell Electronics**. To do so, we want to understand the overlapping or lack thereof of customer and products base for both companies.
+Our purpose is to **determine whether the acquisition of Electronidex is convenient for Blackwell Electronics**. To do so, we want to understand the overlapping or lack thereof of customer and products base for both companies.
 
-Furthermore, we want to understand the possible associations between products based on the analysis of past purchase baskets of ElectroIndex, in order to uncover possible sinergies between the two companies.
-
-### Methodology
-Build rules association rules
+Furthermore, we want to understand the possible associations between products based on the analysis of past purchase baskets of Electronidex, in order to uncover possible sinergies between the two companies.
 
 ### Conclusions
-<!-- We know that Blackwell is like MediaMarket and ElectroIndex is like a store in carrer Sepulveda. They cater to different people as it seems, the former to general consumers while the latter goes for electronics enthusiasts.-->
+<!-- We know that Blackwell is like MediaMarket and Electronidex is like a store in carrer Sepulveda. They cater to different people as it seems, the former to general consumers while the latter goes for electronics enthusiasts.-->
+
+First and foremost, we understand that Blackwell Electronics is considering boosting its online market share, specially in the West region. For that matter, the acquisition of Electronidex could be a valuable asset, given all its sales are made through that channel and it could add a lot of experience to the company.
+
+Regarding customers, we can assert that Electronidex has two identifiable customer segments: retail and business. For retail customers, two subgroups, "Apple Enthusiasts" (or Fanboys) and Gamers, stand out from regular retail clients. Distribution for the transactions analyzed is as follows:
+```{r}
+pie
+```
+
+Not only that, we understand that Electronidex catters to a more specific type of client, that at least knows its way around computers, given the current product rooster. Of course, specificity entails quality, which in turn entails higher prices. This, we believe, is a good addition to the Blackwell's strategy, which follows a more generalistic approach, cattering to "all publics".
+
+On current products, we can see the best seller for Electronidex is the iMac, which we believe would be a good candidate to add to Blackwell's inventory.  
+
+```{r}
+itemFrequencyPlot(trList[["all"]], topN=10, type="absolute", main = "Top 10 products")
+```
+
+Regarding product associations, we have found in the business segment that the Viewsonic Monitor entails with high probability the following purchase of either a HP Laptop or an iMac. We recommend to include these items in the current product inventory.
+
+<!-- Sobre reglas de asociacion:
+Hemos encontrado reglas de asociacion para el segmento de clientes “business” (min support 10%, min confidence 50%):
+Con un lift de 1.46, encontramos que los clientes que compran el monitor Viewsonic, tambien adquieren HP Laptop
+Con un lift de 1.18, encontramos que los clientes que compran el monitor Viewsonic, tambien adquieren iMac
+Por tanto, recomendamos la venta del monitor Viewsonic. -->
+
+We have not found relevant associations regarding de retail segment. Nonetheless, for Fanboys, we have found an unusual association that shows the purchase of a Macbook Air following the purchase of an iPhone Charging Cord. We believe this is an example of correlation not meaning causality.
+
+<!-- No hemos encontrado reglas relevantes para el segmento de clientes “retail” (min support 8%, min confidence 50%).
+No obstante, encontramos una regla relevante pero poco aclaratoria dentro del subgrupo “fanboy”. Con un lift de 1.85, aquellos clientes que adquieren un cable de carga para iPhone, adquieren un Macbook Air, pero no obtenemos la regla inversa -->
+
+<!--### Acquisition
+
+We do recommend the acquisition of Electronidex by Blackwell Electronics. This is so because -->
