@@ -98,7 +98,7 @@ rm(allIndex)  # remove unused variables
 minGaming <- 2
 minFanboy <- 2
 # subset for b2b
-gaming <- subset(
+gamer <- subset(
   dfWideClients,
   # criteria used to subset for b2b
   Gaming >= minGaming
@@ -109,8 +109,19 @@ fanboy <- subset(
   Fanboy >= minFanboy
 )
 # create index vectors
-gaming <- as.integer(rownames(gaming))
-fanboy <- as.integer(rownames(fanboy))
+gamer <- intersect(b2c, as.integer(rownames(gamer)))
+fanboy <- intersect(b2c, as.integer(rownames(fanboy)))
+regular <- setdiff(b2c, union(gamer, fanboy))
+# length(regular)+length(fanboy)+length(gamer) == length(b2c)  # why is this false?!
 
 rm(list=ls(pattern="^min.*"))  # remove unused variables
-# rm(dfWideProducts, dfWideClients)  # remove unused variables2df
+rm(dfWideProducts, dfWideClients)  # remove unused variables2df
+
+segmentsList <- list(
+  b2b = b2b,
+  b2c = b2c,
+  regular = regular,
+  fanboy = fanboy,
+  gamer = gamer
+)
+rm(b2b, b2c, regular, fanboy, gamer)  # remove unused variables
