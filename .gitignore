@@ -1,6 +1,6 @@
 .Rproj.user
 
-*.html
+#*.html
 
 \.Rhistory
 
