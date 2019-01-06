@@ -21,7 +21,7 @@ fileSources <- c(
 sapply(fileSources, source, .GlobalEnv)
 rm(fileSources)
 
-trList <- list()
+trList <- list(all = tr)
 # subset transactions
 for(t in names(segmentsList)){
   trList[[t]] <- tr[segmentsList[[t]]]
