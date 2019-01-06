@@ -21,14 +21,6 @@ newInfo <- merge(newInfo, pr, by.x = "labels", by.y = "Product", all.x=TRUE)  # 
 itemInfo(tr) <- newInfo[,c("labels", "Type")]  # add categories to itemInfo in tr
 rm(newInfo, pr)  # remove unused variables
 
-# build frequency plot
-freqPlot <- itemFrequencyPlot(
-  tr,
-  topN = 10,
-  # support = .2,
-  type = "absolute"
-)
-
 # plot(
 #   head(
 #     rules,
