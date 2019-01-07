@@ -16,9 +16,10 @@ allIndex <- c(1:nrow(df))  # create vector with all indexes
 
 # read categories from file
 pr <- read.csv(
-  "./data/item_list2.csv"
+  "./data/item_list2.csv",
+  strip.white = TRUE
 )
-pr <- apply(pr, 2, trim)  # trim strings
+# pr <- apply(pr, 2, trim)  # trim strings, not needed any more
 
 
 #### Build transactions dataframe ####
@@ -32,6 +33,13 @@ for(row in 1:nrow(df)){
   v$transaction <- row  # add column with transaction number
   tmpdf <- rbind(tmpdf, v)  # append to new dataframe to create long format
 }
+
+## THIS IS BETTER CODE! DO NOT ITERATE OVER DATAFRAMES IDIOT!!!
+# df[df == ''] <- NA
+# df$transaction <- 1:nrow(df)
+# df <- na.omit(melt(data = df, id.vars = 'transaction'))
+# df$variable <- NULL
+# df <- df[order(df$transaction), ]
 
 df <- apply(tmpdf, 2, trim)  # trim strings
 # merge categories
