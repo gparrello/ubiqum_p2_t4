@@ -23,25 +23,27 @@ pr <- read.csv(
 
 
 #### Build transactions dataframe ####
-tmpdf <- data.frame()  # create empty dataframe
-# loop over dataframe rows
-for(row in 1:nrow(df)){
-  v <- unname(unlist(df[row,]))  # get a vector out of a row from the dataframe
-  v <- v[!v %in% ""]  # remove empty elements from the vector
-  v <- as.data.frame(v)  # convert to a 1-column dataframe
-  colnames(v) <- "Product"  # change name of column
-  v$transaction <- row  # add column with transaction number
-  tmpdf <- rbind(tmpdf, v)  # append to new dataframe to create long format
-}
+# tmpdf <- data.frame()  # create empty dataframe
+# # loop over dataframe rows
+# for(row in 1:nrow(df)){
+#   v <- unname(unlist(df[row,]))  # get a vector out of a row from the dataframe
+#   v <- v[!v %in% ""]  # remove empty elements from the vector
+#   v <- as.data.frame(v)  # convert to a 1-column dataframe
+#   colnames(v) <- "Product"  # change name of column
+#   v$transaction <- row  # add column with transaction number
+#   tmpdf <- rbind(tmpdf, v)  # append to new dataframe to create long format
+# }
 
-## THIS IS BETTER CODE! DO NOT ITERATE OVER DATAFRAMES IDIOT!!!
-# df[df == ''] <- NA
-# df$transaction <- 1:nrow(df)
-# df <- na.omit(melt(data = df, id.vars = 'transaction'))
-# df$variable <- NULL
+## THIS IS BETTER CODE! DO NOT LOOP OVER DATAFRAMES YOU IDIOT!!!
+df[df == ''] <- NA
+df$transaction <- 1:nrow(df)
+df <- na.omit(melt(data = df, id.vars = 'transaction'))
+df$variable <- NULL
 # df <- df[order(df$transaction), ]
+colnames(df)[2] <- "Product"
+df <- apply(df, 2, trim)
 
-df <- apply(tmpdf, 2, trim)  # trim strings
+# df <- apply(tmpdf, 2, trim)  # trim strings
 # merge categories
 df <- merge(
   df,
@@ -52,7 +54,8 @@ df <- merge(
   all.y = FALSE
   )
 df <- subset(df, Product != "")  # still have some empty products, remove them
-rm(v, row, tmpdf, pr)  # remove unused variables
+# rm(v, row, tmpdf, pr)  # remove unused variables
+rm(pr)  # remove unused variables
 
 dfWideProducts <- dcast(df, transaction ~ Type, value.var = "transaction", fun.aggregate = length)  # cast dataframe into wide (pivot) format
 rownames(dfWideProducts) <- dfWideProducts$transaction  # set transaction numbers as indexes
